@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import SoundboardContext from '../SoundboardContext';
 import Sound from '../Sound/Sound';
 
+//This is for the Browse section. Will be for view only.
 class SoundboardViewer extends Component {
     static contextType = SoundboardContext
 
+    //This will duplicate a soundboard
     handleFork = e => {
         e.preventDefault()
 
@@ -16,7 +18,7 @@ class SoundboardViewer extends Component {
         return (
             <>
                 <header>
-                    <h1>Imperial Watch</h1>
+                    <h1>{this.context.soundboards.find(soundboard => parseInt(this.props.routeInfo.match.params.id) === soundboard.id).name}</h1>
                 </header>
                 <section className="create-items">
                     <form>

@@ -36,7 +36,6 @@ class App extends Component {
   //fetch function for when the app starts and when a new soundboard is made
   //I want to fetch differently based on the user id. 
   fetchSoundboards = () => {
-    console.log(this.state.loginInfo)
     return fetch(config.API_ENDPOINT + `/api/users/${this.state.loginInfo.user.id}/soundboards`, {
       method: 'GET',
       headers: {
@@ -66,8 +65,6 @@ class App extends Component {
 
   //basic new soundboard without any name
   newSoundboard = (id) => {
-    console.log(id)
-    console.log(typeof id)
     const newSoundboard = {
       name: `New Soundboard ${Date.now()}`,
       public: false,
@@ -105,7 +102,6 @@ class App extends Component {
 
   //after hitting the save soundboard button in SoundboardEditor.js
   saveSoundboard = (soundboardId, entries, nameData, isPublic) => {
-    console.log(this.state.soundboardEntries)
     const sounds = entries.map(e => ({
       soundboard_id: e.soundboard_id,
       file: e.file,
@@ -116,15 +112,11 @@ class App extends Component {
 
     this.deleteEntries(soundboardId, () => this.addSounds(...sounds));
 
-    console.log(this.state.soundboardEntries)
-
     this.setState(prevState => ({
       soundboards: prevState.soundboards.map(
         e => parseInt(e.id) === parseInt(soundboardId) ? { ...e, name: nameData, public: isPublic } : e
       )
     }));
-
-    console.log(this.state.soundboardEntries)
   }
 
   //delete the soundboard entries to make room for new entries for saveSoundboard function
@@ -134,22 +126,15 @@ class App extends Component {
       entry => entry.soundboard_id !== soundboardId
     );
 
-    console.log(typeof this.state.soundboardEntries[0].soundboard_id)
-    console.log(typeof soundboardId)
-    console.log(newEntries)
-
     //set the new state of the soundboard entries without the current soundboard entries
     this.setState({ soundboardEntries: newEntries }, callback);
   }
 
   //Takes the array of sounds and adds them to the soundboardEntries context
   addSounds = (...sounds) => {
-
-    console.log(this.state.soundboardEntries)
     this.setState({
       soundboardEntries: [...this.state.soundboardEntries, ...sounds]
     })
-    console.log(this.state.soundboardEntries)
   }
 
   //function to delete a soundboard
@@ -212,8 +197,6 @@ class App extends Component {
       isLoggedIn: this.isLoggedIn,
       currentUser: this.state.loginInfo.user
     }
-
-    console.log(this.state)
 
     return (
       <>

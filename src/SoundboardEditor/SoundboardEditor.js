@@ -73,6 +73,7 @@ class SoundboardEditor extends Component {
         })
     }
 
+    //removes a sound from the array
     handleDeleteSound = index => {
         const newSounds = this.state.soundArray.filter(
             (sound, i) => i !== index
@@ -81,9 +82,8 @@ class SoundboardEditor extends Component {
         this.setState({ soundArray: newSounds })
     }
 
+    //moves a sound up
     handleMoveSoundUp = index => {
-
-        console.log(this.state.soundArray)
 
         if(index === 0) {
             alert("Can't move up")
@@ -96,10 +96,10 @@ class SoundboardEditor extends Component {
             newSounds[index] = dummy2
 
             this.setState({ soundArray: newSounds })
-            console.log(this.state.soundArray)
         }
     }
 
+    //moves a sound down
     handleMoveSoundDown = index => {
         if(index === this.state.soundArray.length-1) {
             alert("Can't move down")
@@ -112,7 +112,6 @@ class SoundboardEditor extends Component {
             newSounds[index] = dummy2
 
             this.setState({ soundArray: newSounds })
-            console.log(this.state.soundArray)
         }
     }
 
@@ -165,6 +164,7 @@ class SoundboardEditor extends Component {
 
     }
 
+    //deletes the current soundboard
     handleDeleteSoundboard = e => {
         e.preventDefault();
 
@@ -192,8 +192,6 @@ class SoundboardEditor extends Component {
 
     //this renders a form with Sound components
     render() {
-
-        console.log(this.state.soundArray)
         return (
             <>
                 <header>

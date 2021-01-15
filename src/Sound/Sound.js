@@ -17,6 +17,7 @@ class Sound extends Component {
         this.props.onChange(this.props.index, 'activationKeysNumbers', keys);
     }
 
+    //Deletes a sound
     handleDelete = e => {
         e.preventDefault()
         var result = window.confirm("Delete sound?");
@@ -26,11 +27,13 @@ class Sound extends Component {
         
     }
 
+    //Moves the sound up
     handleMoveUp = e => {
         e.preventDefault()
         this.props.onMoveSoundUp(this.props.index)
     }
 
+    //Moves the sound down
     handleMoveDown = e => {
         e.preventDefault()
         this.props.onMoveSoundDown(this.props.index)
@@ -40,6 +43,7 @@ class Sound extends Component {
 
         let actionButtons;
 
+        //This same code is used for the viewer. The buttons are specific for the editor
         if(this.props.isSoundboardEditor) {
             actionButtons = 
             <>

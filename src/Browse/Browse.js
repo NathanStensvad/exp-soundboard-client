@@ -14,6 +14,7 @@ class Browse extends Component {
         soundboardEntries: []
     }
 
+    //fetches all the public soundboards
     componentDidMount() {
         fetch(config.API_ENDPOINT + '/api/soundboards', {
             method: 'GET',
@@ -44,20 +45,6 @@ class Browse extends Component {
                 <section>
                     <h3>User Created Soundboards</h3>
                 </section>
-                {/*
-                <form>
-                    <label htmlFor="search">Search:  </label>
-                    <input type="text" id="search"></input>
-                </form>
-                <section>
-                    <label htmlFor="sort">Sort By: </label>
-                    <select name="sort" id="sort">
-                        <option value="alphabetical">alphabetical</option>
-                        <option value="size">size</option>
-                        <option value="username">user name</option>
-                    </select>
-                </section>
-                */}
                 {this.context.soundboards
                 .filter(soundboard => soundboard.public === true)
                 .map(soundboard => (

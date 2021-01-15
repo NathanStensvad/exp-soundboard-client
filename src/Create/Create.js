@@ -14,8 +14,6 @@ class Create extends Component {
     //This is the component for the user's own soundboards that he can edit
     render() {
 
-        console.log(this.context.currentUser)
-
         var showSoundboards
 
         if(this.context.currentUser === null) {
