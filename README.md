@@ -1,4 +1,74 @@
+# EXP Soundboard Manager(Client)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+## Live App
+
+https://exp-soundboard-client.vercel.app
+
+## API Repo
+
+https://github.com/NathanStensvad/exp-soundboard-api
+To see API documentation, go to the API repo README
+
+## How to Use EXP Soundboard Manager
+
+                        First thing you have to do is set up a folder for your soundboards and sound files
+                        This part is not completely user friendly yet so you will need to follow a few steps.
+                        I suggest using your documents to save your soundboards.
+
+                        1. Navigate to your main drive and go to users and find your user name.
+                        ![Title and Sounds 1](https://github.com/NathanStensvad/exp-soundboard-client/blob/main/public/pictures/4.1.png)
+                        <img src="pictures/4.1.png" alt="Title and Sounds 1" /><br />
+                        <img src="pictures/4.2.png" alt="Title and Sounds 2" /><br />
+                        <img src="pictures/4.3.png" alt="Title and Sounds 3" /><br /><br />
+
+                        2. Create a folder in your documents for your soundboards. (I called mine EXP-Soundboards)<br /><br />
+                        <img src="pictures/4.4.png" alt="Create Soundboard Directory 1" /><br /><br />
+                        <img src="pictures/4.45.png" alt="Create Soundboard Directory 2" /><br /><br />
+
+                        3. Create a folder inside EXP-Soundboards with your soundboard name.<br /><br />
+                        <img src="pictures/4.5.png" alt="Create Soundboard Folder" /><br /><br />
+
+                        4. Download sound files from somewhere(freesound.org for example) and place them inside that folder.<br /><br />
+                        <img src="pictures/4.6.png" alt="Add Files" /><br /><br />
+
+                        5. Create a new Soundboard in the app.<br /><br />
+                        <img src="/pictures/1.png" alt="New Soundboard Step 1-1" /><br /><br/>
+
+                        6. Type in a title and add sounds.<br/><br/>
+                        <img src="pictures/3.png" alt="Title and Sounds" /><br/><br/>
+
+                        (This is the most user unfriendly portion that is still being worked on so bear with this section<br/>
+                        I still need to key reading for activation keys, easier file path changing, and the ability to move around sounds)<br/><br/>
+
+                        7. Write down your file path as shown in the picture. <br/>
+                        You could make your file path anywhere but this example will show you how to put your soundboard in your documents<br />
+                        For this example, if my user name is "TACO", soundboard is "The Word", and my sound is "bird.mp3", <br />I would write "C:\Users\Nathan\Documents\EXP-Soundboards\The Word\bird.mp3"<br/>
+                        To streamline the process from there, every time you add a new sound, just copy the whole string and replace the last sound name (bird.mp3) with another sound.<br/><br/>
+                        Then type in the numbers for the activation keys you want. Clink on the link for the javascript character codes page for the numbers you can use.<br/>
+                        If you wanted to use the letter "a" for a sound activation, you would write "65" in the box. <br/>
+                        A comma indicates that you will need to press down multiple keys. In the picture below, "17,96" means "Ctrl Numpad 3"<br/>
+                        I would suggest using the numpad numbers for your soundboard as they aren't really used for many things<br/><br/>
+                        <img src="pictures/4.0.png" alt="File Path" /><br/><br/>
+
+                        8. Download the json file from the create page and put it into your soundboard folder with all your sound files in it. <br/><br/>
+                        <img src="pictures/6.png" alt="Download from Create" /><br/><br/>
+                        <img src="pictures/5.png" alt="Soundboard Folder" /><br/><br/>
+
+                        9. Now open up your soundboard using the EXP Soundboard application<br/><br/>
+                        <img className="exp" src="pictures/7.1.png" alt="Open in Application 1" /><br/><br/>
+                        <img className="exp" src="pictures/7.2.png" alt="Open in Application 2" /><br/><br/>
+                        <img className="exp" src="pictures/7.3.png" alt="Open in Application 3" /><br/><br/>
+
+                        Now you're ready to play your soundboard! If it didn't work, be sure that your file path is correct, you have the right keys assigned, and have your sound files spelled properly.<br/>
+                        Once again, this isn't very user friendly yet but this does work to at least make and share a soundboard with other users. I also still need to add a soundboard uploader as well.
+
+
+# General React Guide
+
+This is the default guide below to use React on your system
 
 ## Available Scripts
 
