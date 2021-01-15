@@ -9,20 +9,20 @@ https://exp-soundboard-client.vercel.app
 
 ## API Repo
 
-https://github.com/NathanStensvad/exp-soundboard-api
+https://github.com/NathanStensvad/exp-soundboard-api \
 To see API documentation, go to the API repo README
 
 ## How to Use EXP Soundboard Manager
 
-                        First thing you have to do is set up a folder for your soundboards and sound files
-                        This part is not completely user friendly yet so you will need to follow a few steps.
-                        I suggest using your documents to save your soundboards.
+First thing you have to do is set up a folder for your soundboards and sound files
+This part is not completely user friendly yet so you will need to follow a few steps.
+I suggest using your documents to save your soundboards.
 
-                        1. Navigate to your main drive and go to users and find your user name.
-                        ![Title and Sounds 1](https://github.com/NathanStensvad/exp-soundboard-client/blob/main/public/pictures/4.1.png)
-                        <img src="pictures/4.1.png" alt="Title and Sounds 1" /><br />
-                        <img src="pictures/4.2.png" alt="Title and Sounds 2" /><br />
-                        <img src="pictures/4.3.png" alt="Title and Sounds 3" /><br /><br />
+1. Navigate to your main drive and go to users and find your user name.
+![Title and Sounds 1](https://github.com/NathanStensvad/exp-soundboard-client/blob/main/public/pictures/4.1.png)
+<img src="pictures/4.1.png" alt="Title and Sounds 1" /><br />
+<img src="pictures/4.2.png" alt="Title and Sounds 2" /><br />
+<img src="pictures/4.3.png" alt="Title and Sounds 3" /><br /><br />
 
                         2. Create a folder in your documents for your soundboards. (I called mine EXP-Soundboards)<br /><br />
                         <img src="pictures/4.4.png" alt="Create Soundboard Directory 1" /><br /><br />
