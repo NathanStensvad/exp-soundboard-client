@@ -19,20 +19,37 @@ class Sound extends Component {
 
     handleDelete = e => {
         e.preventDefault()
-        this.props.onDelete(this.props.index)
+        var result = window.confirm("Delete sound?");
+        if(result) {
+            this.props.onDelete(this.props.index)
+        }
+        
+    }
+
+    handleMoveUp = e => {
+        e.preventDefault()
+        this.props.onMoveSoundUp(this.props.index)
+    }
+
+    handleMoveDown = e => {
+        e.preventDefault()
+        this.props.onMoveSoundDown(this.props.index)
     }
 
     render() {
 
-        console.log(this.props.entry)
-
-        let deleteButton;
+        let actionButtons;
 
         if(this.props.isSoundboardEditor) {
-            deleteButton = <button onClick={this.handleDelete}>Delete</button>
+            actionButtons = 
+            <>
+                <button onClick={this.handleDelete}>Delete</button>
+                <button onClick={this.handleMoveUp}>Up</button>
+                <button onClick={this.handleMoveDown}>Down</button>
+            </>
         }
         else {
-            deleteButton = <></>
+            actionButtons = <></>
         }
 
         return (
@@ -44,7 +61,7 @@ class Sound extends Component {
                     <label htmlFor={`activationKeysNumbers${this.props.index}`}> Activation Keys: </label>
                     <input type="text" id={`activationKeysNumbers${this.props.index}`} value={this.props.entry.activationKeysNumbers.join()} onChange={this.updateActivationKeys}></input>
                     <br />
-                    {deleteButton}
+                    {actionButtons}
                 </section>
             </>
         )

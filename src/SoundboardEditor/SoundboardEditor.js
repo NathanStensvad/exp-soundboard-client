@@ -81,6 +81,41 @@ class SoundboardEditor extends Component {
         this.setState({ soundArray: newSounds })
     }
 
+    handleMoveSoundUp = index => {
+
+        console.log(this.state.soundArray)
+
+        if(index === 0) {
+            alert("Can't move up")
+        }
+        else {
+            const newSounds = this.state.soundArray
+            var dummy = this.state.soundArray[index]
+            var dummy2 = this.state.soundArray[index-1]
+            newSounds[index-1] = dummy
+            newSounds[index] = dummy2
+
+            this.setState({ soundArray: newSounds })
+            console.log(this.state.soundArray)
+        }
+    }
+
+    handleMoveSoundDown = index => {
+        if(index === this.state.soundArray.length-1) {
+            alert("Can't move down")
+        }
+        else {
+            const newSounds = this.state.soundArray
+            var dummy = this.state.soundArray[index]
+            var dummy2 = this.state.soundArray[index+1]
+            newSounds[index+1] = dummy
+            newSounds[index] = dummy2
+
+            this.setState({ soundArray: newSounds })
+            console.log(this.state.soundArray)
+        }
+    }
+
     //This function uses context to save all the sounds to the soundboardEntries context
     handleSaveSoundboard = e => {
         e.preventDefault();
@@ -181,7 +216,7 @@ class SoundboardEditor extends Component {
                 <form id="soundform">
                     {this.state.soundArray
                         .map((entry, index) => (
-                            <Sound routeInfo={this.props.routeInfo} entry={entry} index={index} key={index} isSoundboardEditor={true} onChange={this.updateField} onDelete={this.handleDeleteSound} />
+                            <Sound routeInfo={this.props.routeInfo} entry={entry} index={index} key={index} isSoundboardEditor={true} onChange={this.updateField} onDelete={this.handleDeleteSound} onMoveSoundUp={this.handleMoveSoundUp} onMoveSoundDown={this.handleMoveSoundDown} />
                         ))}
                 </form>
                 <section>

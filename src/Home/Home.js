@@ -5,16 +5,19 @@ import config from '../config';
 class Home extends Component {
     static contextType = SoundboardContext
 
+    //Logs the user out when clicked
     logoutSubmitted = e => {
         e.preventDefault();
         this.context.logout()
     }
 
+    //Logs a user in
     loginSubmitted = e => {
         e.preventDefault();
         const name = e.currentTarget.name.value
         const password = e.currentTarget.password.value
 
+        //This will post the name and password to the api and the api will send a token
         fetch(config.API_ENDPOINT + '/api/login', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -31,6 +34,7 @@ class Home extends Component {
             })
     }
     render() {
+        //I put the login info on the home page. You will be able to login and logout using only the home page.
         return (
             <>
                 {this.context.isLoggedIn()
@@ -49,6 +53,7 @@ class Home extends Component {
                         <br />Demo password: password
                         </p>
                     </form>}
+                    {/*This is just a how to guide on how to use this app below*/}
                 <section className="how center">
                     <h3>About the EXP soundboard</h3>
                     <p>
